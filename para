@@ -1,0 +1,5 @@
+#!/usr/bin/gawk -f
+{ if ($2<=10 && $2>=-10) { x=$1; s[x]+=$3; e[x]+=$6/sqrt($5); n[x]++}
+} END {
+  for (x in n) print x, s[x]/n[x], e[x]/n[x]
+}
